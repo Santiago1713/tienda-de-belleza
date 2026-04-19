@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tocodo - Tienda de Belleza</title>
+    <link rel="stylesheet" href="estilo/estilo.css">
+</head>
+<body class="body-magikal">
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+                        CATÁLOGO ▾
+                    </button>
+                    <ul class="dropdown-content">
+                        <li><a href="maquillaje.html">Maquillaje</a></li>
+                        <li><a href="capilares.html">Capilares</a></li>
+                        <li><a href="skin-care.html">Skin Care</a></li>
+                        <li><a href="corporales.html">Corporales</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-box">
+                    <input type="text" id="input-busqueda" placeholder="Buscar por producto o marca...">
+                    <button class="search-btn" aria-label="Buscar">🔍</button>
+                </div>
+                <div class="cart-icon">
+                    <button id="open-cart" class="icon-btn" aria-label="Ver carrito">
+                        <img src="logos/carrito.png" alt="Carrito" class="cart-img-icon">
+                        <span id="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="shop-layout-profesional">
+            <aside class="filters-sidebar">
+                <h2 class="filter-title">Filtrar:</h2>
+                <div class="filter-group">
+                    <p class="filter-subtitle">Disponibilidad</p>
+                    <label>
+                        <input type="checkbox" id="check-existencia"> 
+                        En existencia (<span id="count-existencia">0</span>)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="check-agotado"> 
+                        Agotado (<span id="count-agotado">0</span>)
+                    </label>
+                </div>
+                <div class="filter-group">
+                    <p class="filter-subtitle">Precio</p>
+                    <hr>
+                </div>
+            </aside>
+
+            <section class="products-content">
+                <div class="products-header-info">
+                    <span id="product-count">Cargando productos...</span>
+                    <div class="sort-box">
+                        <label>Ordenar por:</label>
+                        <select id="ordenar-productos">
+                            <option value="populares">Más vendidos</option>
+                            <option value="bajo">Precio: menor a mayor</option>
+                            <option value="alto">Precio: mayor a menor</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="contenedor-productos" class="products-grid-professional"></div>
+            </section>
+        </div>
+    </main>
+
+    <aside id="carrito-sidebar" class="cart-sidebar" aria-labelledby="cart-title">
+        <div class="cart-header">
+            <h2 id="cart-title">Tu carrito</h2>
+            <button id="close-cart" class="close-btn" aria-label="Cerrar carrito">
+                <img src="logos/cerrar.png" alt="Cerrar" class="close-cart-img">
+            </button>
+        </div>
+        <div class="cart-labels">
+            <span>PRODUCTO</span>
+            <span>TOTAL</span>
+        </div>
+        <div class="cart-body">
+            <div id="cart-items-container"></div>
+        </div>
+        <div class="cart-footer">
+            <p class="delivery-warning">
+                * El valor del domicilio es adicional y se coordina según tu ubicación.
+            </p>
+            <div class="total-estimated">
+                <span>Total estimado</span>
+                <span id="cart-total-amount">$0</span>
+            </div>
+            <button class="btn-checkout" id="btn-whatsapp">Terminar de comprar por WhatsApp</button>
+        </div>
+    </aside>
+
+    <div id="cart-overlay" class="overlay"></div>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

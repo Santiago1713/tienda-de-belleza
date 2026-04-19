@@ -1,0 +1,1034 @@
+/* 1. Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@400;600;700&display=swap');
+
+/* 2. Variables Globales */
+:root {
+    --fuente-titulos: 'Poppins', sans-serif;
+    --fuente-cuerpo: 'Montserrat', sans-serif;
+    --color-fondo-pagina: #fcebeb; /* Rosado pastel de fondo */
+    --color-navbar: #fbd6d6;       /* Rosado de la barra superior */
+    --color-texto-vino: #a13d63;   /* Color de letras profesional */
+    --color-rosado-hover: #ffffff;
+    --color-whatsapp: #25d366;
+}
+
+/* 3. Reset y Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo-pagina) !important; 
+    font-family: var(--fuente-cuerpo);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 4. Navbar Profesional */
+header {
+    background-color: var(--color-navbar);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 2000; /* <--- CAMBIAR DE 100 A 2000 */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a, .dropbtn {
+    text-decoration: none;
+    color: var(--color-texto-vino);
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .dropbtn:hover {
+    color: var(--color-rosado-hover);
+}
+
+/* 5. Buscador e Iconos - VERSIÓN FINAL BLINDADA */
+.nav-icons {
+    position: absolute; 
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; 
+    padding: 5px 15px;
+    border-radius: 25px; 
+    border: 2px solid var(--color-texto-vino);
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.9rem;
+    color: #333;
+    width: 150px; 
+    transition: width 0.3s ease;
+}
+
+.search-box input:focus {
+    width: 200px; /* Se estira al escribir */
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--color-texto-vino);
+    display: flex;
+    align-items: center;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    /* Cambio: Evita que el botón crezca más que el icono */
+    width: 40px;
+    height: 40px;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.cart-img-icon {
+    width: 32px !important; 
+    height: 32px !important;
+    display: block;
+    object-fit: contain; 
+}
+
+#cart-count {
+    background-color: var(--color-texto-vino);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-family: var(--fuente-titulos);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0px; 
+    right: -2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border: 2px solid var(--color-navbar);
+    z-index: 2;
+}
+
+@keyframes jump {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.4) translateY(-5px); }
+    50% { transform: scale(1.2) translateY(0); }
+    100% { transform: scale(1); }
+}
+
+.cart-animate {
+    animation: jump 0.4s ease-out;
+}
+
+/* 6. Cuadrícula de Productos (CON AJUSTE DE ESPACIO Y TAMAÑO) */
+.container {
+    max-width: 1200px;
+    margin: 20px auto; 
+    padding: 0 20px;
+}
+
+.section-header {
+    text-align: center;
+    padding: 140px 0 20px 0; 
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-family: var(--fuente-titulos);
+    color: var(--color-texto-vino);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.2rem; 
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    min-height: 500px; 
+}
+
+.no-products {
+    grid-column: 1 / -1; 
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1.1rem;
+    color: var(--color-texto-vino);
+    background: #fff;
+    border-radius: 15px;
+    border: 2px dashed var(--color-navbar);
+    font-family: var(--fuente-titulos);
+    animation: fadeIn 0.5s ease-in;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-img {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    /* CAMBIO: Cursor sugerido para indicar que se puede abrir detalle */
+    cursor: zoom-in; 
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Efecto visual extra al pasar el mouse por la imagen */
+.product-card:hover .product-img img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.precio {
+    color: var(--color-texto-vino);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.btn-add {
+    background-color: var(--color-navbar);
+    color: var(--color-texto-vino);
+    border: 1px solid var(--color-texto-vino);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background-color: var(--color-texto-vino);
+    color: white;
+}
+
+/* 7. Carrito Sidebar y Overlay (UNIFICADO Y CORREGIDO) */
+.cart-sidebar {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 380px;
+    height: 100vh; 
+    background-color: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: 0.4s ease-in-out;
+    z-index: 2500;
+    /* ESTO ES LA CLAVE */
+    display: flex;
+    flex-direction: column; 
+    padding: 0; 
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+/* Cabecera Fija: Alineación y espacio equilibrado */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-navbar);
+    padding: 15px 20px; 
+    background: white;
+    flex-shrink: 0; /* Evita que la cabecera se aplaste */
+}
+
+/* --- CONTROL DEL BOTÓN DE CERRAR (SOLUCIÓN ICONO GIGANTE) --- */
+.close-btn {
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 32px !important; /* Tamaño fijo del área de clic */
+    height: 32px !important;
+    min-width: 32px !important;
+    transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
+.close-cart-img {
+    width: 20px !important; 
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    display: block !important;
+    object-fit: contain !important;
+}
+
+/* 8. Items del Carrito (CON SCROLL INDEPENDIENTE) */
+.cart-body {
+    flex: 1; /* Esto hace que el cuerpo ocupe todo el espacio disponible */
+    overflow-y: auto; /* Habilita el scroll solo aquí */
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    scrollbar-width: thin; 
+    scrollbar-color: var(--color-navbar) transparent;
+    /* Evita que los productos se peguen al formulario */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.qty-btn {
+    background: #f0f0f0;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.qty-btn:hover {
+    background: var(--color-navbar);
+    color: var(--color-texto-vino);
+}
+
+.qty-input {
+    width: 30px;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+    background: transparent;
+}
+
+.cart-footer {
+    padding: 20px;
+    background-color: white;
+    border-top: 1px solid #eee;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.05); 
+    z-index: 10;
+    flex-shrink: 0; 
+}
+
+.cart-total-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: var(--color-texto-vino);
+    font-size: 1.1rem;
+}
+
+/* 9. Botones de Finalizar y Dropdown (CORREGIDO) */
+.btn-checkout {
+    background-color: var(--color-texto-vino);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: var(--fuente-titulos);
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-checkout:hover {
+    background-color: #7a2d4b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(161, 61, 99, 0.3);
+}
+
+.btn-continue {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-family: var(--fuente-cuerpo);
+    transition: 0.3s;
+}
+
+.btn-continue:hover {
+    background-color: #f9f9f9;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    z-index: 3500; 
+    top: 100%; 
+    left: 0;
+    border-radius: 8px;
+    padding: 10px 0;
+    list-style: none !important;
+}
+.dropdown-content li {
+    list-style: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-content a {
+    color: var(--color-texto-vino);
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--color-fondo-pagina);
+    padding-left: 25px; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 10. Mensajes de Confirmación (Toasts) */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background-color: var(--color-texto-vino); /* Usamos tu color vino profesional */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease, fadeOut 0.3s ease 2.5s forwards;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Animaciones para que aparezca suave y se desvanezca */
+@keyframes slideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* 11. Modal de Agradecimiento */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.4s ease;
+}
+
+.modal-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-texto-vino);
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 12. Filtros de Categorías */
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Para que en celular se acomoden solitos */
+}
+
+.filter-btn {
+    background: white;
+    border: 2px solid var(--color-primario-rosa);
+    color: var(--color-texto-vino);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--fuente-cuerpo);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--color-primario-rosa);
+    color: white;
+}
+
+.filter-btn.active {
+    background-color: var(--color-texto-vino);
+    border-color: var(--color-texto-vino);
+    color: white;
+}
+
+/* 13. Modal de Detalle de Producto */
+.detalle-container {
+    max-width: 800px !important;
+    width: 90%;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.detalle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detalle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detalle-info {
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detalle-marca {
+    color: var(--color-texto-vino);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.detalle-descripcion {
+    margin: 20px 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.detalle-precio {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-texto-vino);
+    margin-bottom: 20px;
+}
+
+.close-btn-modal {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .detalle-grid { grid-template-columns: 1fr; }
+}
+
+
+ /* 14. RESPONSIVIDAD TOTAL (Mobile, Tablet, Laptop, PC) */
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    .products-grid, .products-grid-professional {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 0;
+    }
+
+    .navbar {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .nav-icons {
+        position: static; 
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* --- CAMBIO NUEVO: Ajuste del Layout Magikal --- */
+    .shop-layout-profesional {
+        grid-template-columns: 1fr; /* Los productos bajan debajo de los filtros */
+        padding: 20px 15px;
+    }
+
+    .filters-sidebar {
+        position: static; /* Deja de estar pegado a la izquierda */
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .products-grid, .products-grid-professional {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+    }
+
+    .cart-sidebar {
+        width: 85%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 0.75rem; 
+    }
+
+    /* Ajuste Buscador Redondeado */
+    .search-box {
+        width: 95%;
+    }
+
+    .search-box input {
+        width: 100%; 
+    }
+
+    /* Ajuste Tarjetas en móvil */
+    .products-grid, .products-grid-professional {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+    }
+
+    .product-img {
+        height: 160px; 
+    }
+
+    .btn-add, .btn-add-cart {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Filtros horizontales para que no ocupen mucho espacio en móvil */
+    .filter-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .category-filters {
+        display: flex;
+        justify-content: flex-start;
+        overflow-x: auto; 
+        padding: 10px 5px;
+        gap: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-btn {
+        flex: 0 0 auto; 
+    }
+}
+/* 15 --- SKELETON LOADER (Versión Final Blindada) --- */
+.skeleton-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    min-height: 380px; 
+    will-change: transform, opacity;
+}
+
+.skeleton-img, 
+.skeleton-text, 
+.skeleton-btn {
+    background: #ececec !important;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%) !important;
+    background-size: 200% 100% !important;
+    animation: shine 1.5s linear infinite !important;
+}
+
+.skeleton-img {
+    width: 100%;
+    height: 250px; 
+}
+
+.skeleton-text {
+    height: 15px;
+    margin: 15px 20px 5px 20px;
+    border-radius: 5px;
+}
+
+.skeleton-text:last-of-type {
+    width: 60%;
+}
+
+.skeleton-btn {
+    height: 35px;
+    width: 80%;
+    margin: 15px auto 0 auto; 
+    border-radius: 20px;
+}
+
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
+
+.product-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 16 --- NUEVO: FORMULARIO DE ENVÍO EN CARRITO --- */
+.shipping-info {
+    margin: 0 0 15px 0; /* Reducimos margen superior */
+    padding: 12px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--color-navbar);
+}
+
+.shipping-info h4 {
+    color: var(--color-texto-vino);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    font-family: var(--fuente-titulos);
+}
+
+.ship-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 6px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-family: var(--fuente-cuerpo);
+    background: #fdfdfd;
+}
+
+.ship-input:focus {
+    outline: 1px solid var(--color-texto-vino);
+    background: #fff;
+}
+
+/* --- ADVERTENCIA DE DOMICILIO --- */
+.delivery-warning {
+    font-size: 0.75rem; /* Un poco más legible */
+    color: #4a0e0e; /* O usa tu variable var(--color-texto-vino) */
+    margin-bottom: 15px; /* Espacio antes del total */
+    font-weight: 600;
+    line-height: 1.3;
+    border-left: 3px solid #4a0e0e;
+    padding-left: 10px;
+}
+
+/* Pie del carrito fijo al fondo */
+.cart-footer {
+    flex-shrink: 0; 
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.05); 
+}
+
+/* Menú desplegable limpio */
+.dropdown-content {
+    list-style: none !important; 
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase; 
+    font-size: 0.8rem;
+    padding: 12px 16px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1aee1; /* Color suave al pasar el mouse */
+}
+/* 17 Quita el fondo gris y el borde del botón original */
+.delete-btn {
+    background: none !important; /* Forzamos quitar fondos de otros botones */
+    border: none !important;
+    padding: 0;
+    margin-left: 12px;
+    cursor: pointer;
+    display: inline-flex; /* Cambiado a inline-flex para mejor alineación */
+    align-items: center;
+    justify-content: center;
+    width: auto; /* Evita que el botón ocupe todo el ancho */
+    height: auto;
+    vertical-align: middle;
+}
+
+/* --- TAMAÑO CONTROLADO DEL ICONO --- */
+.trash-icon {
+    /* Forzamos el tamaño para que no herede anchos de 100% */
+    width: 20px !important; 
+    max-width: 20px !important;
+    height: 20px !important;
+    
+    display: block;
+    object-fit: contain;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    
+    opacity: 0.8; 
+}
+.delete-btn:hover .trash-icon {
+    transform: scale(1.15); /* Crece un poquito al pasar el mouse */
+    filter: brightness(0.7); /* Se oscurece un poco */
+    opacity: 1;
+}
+.quantity-controls {
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
+}
+
+/* 18. ESTRUCTURA DE PÁGINA MAGIKAL (2 COLUMNAS) */
+.shop-layout-profesional {
+    display: grid;
+    grid-template-columns: 280px 1fr; 
+    gap: 30px;
+    padding: 40px 20px;
+    align-items: start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Estilo de la barra lateral de filtros */
+.filters-sidebar {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    position: sticky;
+    top: 20px; 
+}
+
+.filter-title {
+    font-family: var(--fuente-titulos);
+    color: var(--color-texto-vino);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+/* Grupo de opciones (Disponibilidad, Precio) */
+.filter-group {
+    margin-bottom: 25px;
+}
+
+/* CAMBIO: Mejoramos el espacio ahora que no hay números (19) */
+.filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Más espacio entre checkbox y texto */
+    font-size: 0.95rem; /* Un poco más grande para legibilidad */
+    margin-bottom: 12px;
+    color: #444;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.filter-group label:hover {
+    color: var(--color-texto-vino); /* Efecto visual al pasar el mouse */
+}
+
+/* Tamaño controlado para los checkboxes */
+.filter-group input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+/* Grilla de productos para que las tarjetas no se amontonen */
+.products-grid-professional {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Encabezado del catálogo (Contador y Ordenar por) */
+.products-header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.sort-box select {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-family: var(--fuente-cuerpo);
+    background-color: #fff;
+    cursor: pointer;
+}
