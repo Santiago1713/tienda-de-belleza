@@ -8,7 +8,6 @@ app.use(express.json());
 
 app.use('/imagenes', express.static(path.join(__dirname, 'imagenes')));
 
-// ✅ Lee productos desde el JSON en lugar de MySQL
 const data = require('./productos.json');
 const productos = data[2].data.map(p => ({
     ...p,
