@@ -1,0 +1,39 @@
+[
+{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"tienda_belleza"},
+{"type":"table","name":"productos","database":"tienda_belleza","data":
+[
+{"id":"1","nombre":"CORRECTOR PURE COVER MAJIKAL 02 OFF WHITE","precio":"30000.00","categoria":"magikal","imagen":"imagenes\/02.jpeg","marca":"magikal","es_destacado":"1","stock":"50"},
+{"id":"2","nombre":"POLVO SUELTO 4 TONOS TRASLUCIDO MAJIKAL","precio":"45000.00","categoria":"magikal","imagen":"imagenes\/polvo.jpeg","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"3","nombre":"CORRECTOR PURE COVER MAJIKAL 01 SNOW","precio":"30000.00","categoria":"magikal","imagen":"imagenes\/01.jpeg","marca":"magikal","es_destacado":"0","stock":"60"},
+{"id":"4","nombre":"CORRECTOR PURE COVER MAJIKAL 03 LATINA","precio":"30000.00","categoria":"magikal","imagen":"imagenes\/03.jpeg","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"5","nombre":"CORRECTOR PURE COVER MAJIKAL XL 03 LATINA","precio":"37000.00","categoria":"magikal","imagen":"imagenes\/pure03.jpeg","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"6","nombre":"CORRECTOR PURE COVER MAJIKAL XL 02 OFF WHITE","precio":"37000.00","categoria":"magikal","imagen":"imagenes\/pure02.jpeg","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"7","nombre":"CORRECTOR PURE COVER MAJIKAL 04 CREAM BRULE","precio":"30000.00","categoria":"magikal","imagen":"imagenes\/04.jpeg","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"8","nombre":"CORRECTOR PURE COVER MAJIKAL XL 04 CREAM BRULEE","precio":"37000.00","categoria":"magikal","imagen":"imagenes\/pure04.jpeg","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"9","nombre":"CORRECTOR PURE COVER MAJIKAL XL 01 SNOW","precio":"37000.00","categoria":"magikal","imagen":"imagenes\/pure01.jpeg","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"10","nombre":"CORRECTOR PURE COVER MAJIKAL 00 WINTER","precio":"30000.00","categoria":"magikal","imagen":"imagenes\/01.jpeg","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"11","nombre":"CORRECTOR PURE COVER MAJIKAL XL 00 WINTER","precio":"37000.00","categoria":"magikal","imagen":"imagenes\/pure01.jpeg","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"12","nombre":"SHINY LIP OIL MAJIKAL GODDESS","precio":"22000.00","categoria":"magikal","imagen":"imagenes\/old.png","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"13","nombre":"CORRECTOR PURE COVER MAJIKAL XL 05 CARAMEL","precio":"37000.00","categoria":"magikal","imagen":"imagenes\/pure05.png","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"14","nombre":"CORRECTOR PURE COVER MAJIKAL 05 CARAMEL","precio":"30000.00","categoria":"magikal","imagen":"imagenes\/05.png","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"15","nombre":"RUBOR EN CREMA MAGIC CHEEKS MAJIKAL - BLUSHY","precio":"36000.00","categoria":"magikal","imagen":"imagenes\/rubor.png","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"17","nombre":"PROTECTOR SOLAR CON COLOR MAJIKAL - NATURAL","precio":"51000.00","categoria":"magikal","imagen":"imagenes\/solar.jpeg","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"19","nombre":"PALETA PARA EL ROSTRO MAJIKAL - ORANGE","precio":"45000.00","categoria":"magikal","imagen":"imagenes\/paleta.jpeg","marca":"magikal","es_destacado":"0","stock":"50"},
+{"id":"20","nombre":"MANTEQUILLA CORPORAL FANTILUNA X 75 ml - CHERRY","precio":"16000.00","categoria":"fantiluna","imagen":"imagenes\/fanti.png","marca":"fantinula","es_destacado":"1","stock":"50"},
+{"id":"21","nombre":"MANTEQUILLA CORPORAL FANTILUNA X 75 ml - SANDIA","precio":"15000.00","categoria":"fantinula","imagen":"imagenes\/sandi.png","marca":"fantinula","es_destacado":"0","stock":"50"},
+{"id":"22","nombre":"PROTECTOR SOLAR COTTON BARRA MINI TOCOBO39","precio":"51000.00","categoria":"tocodo","imagen":"imagenes\/pro.png","marca":"tocodo","es_destacado":"1","stock":"50"},
+{"id":"23","nombre":"BLOQUEADOR EN BARRA 50 + X 19 G TOCOBO 31","precio":"77000.00","categoria":"tocodo","imagen":"imagenes\/bar.png","marca":"tocodo","es_destacado":"0","stock":"50"},
+{"id":"24","nombre":"CONTORNO EN GEL DE COLAGENO TOCOBO 12 X 30 m","precio":"71000.00","categoria":"tocodo","imagen":"imagenes\/a.png","marca":"tocodo","es_destacado":"0","stock":"50"},
+{"id":"25","nombre":"PROTECTOR SOLAR VITAMINA E BARRA MINI TOCOBO40","precio":"50000.00","categoria":"tocodo","imagen":"imagenes\/p.png","marca":"tocodo","es_destacado":"0","stock":"50"},
+{"id":"26","nombre":"TRATAMIENTO LA POCION X 450 ml","precio":"39000.00","categoria":"pocion","imagen":"imagenes\/pocion tratamiento.png","marca":"pocion","es_destacado":"1","stock":"50"},
+{"id":"27","nombre":"MASCARILLA ANCESTRAL LA POCION X 350 ml","precio":"38000.00","categoria":"pocion","imagen":"imagenes\/an.png","marca":"pocion","es_destacado":"0","stock":"50"},
+{"id":"28","nombre":"TRATAMIENTO LA POCION TONGOLE X 450 ml","precio":"38000.00","categoria":"pocion","imagen":"imagenes\/ton.png","marca":"pocion","es_destacado":"0","stock":"50"},
+{"id":"29","nombre":"SH CRECIMIENTO Y CAIDA LA POCION X 450 ml","precio":"44000.00","categoria":"pocion","imagen":"imagenes\/sh.png","marca":"pocion","es_destacado":"0","stock":"50"},
+{"id":"30","nombre":"SHAMPOO LA POCION TONGOLE X 450 ml","precio":"38000.00","categoria":"pocion","imagen":"imagenes\/la.png","marca":null,"es_destacado":"0","stock":"0"},
+{"id":"31","nombre":"SHAMPOO LA POCION X 450 ml","precio":"38000.00","categoria":"pocion","imagen":"imagenes\/x.png","marca":"pocion","es_destacado":"0","stock":"50"},
+{"id":"32","nombre":"MASCARILLA TONGOLE LA POCION X 350 ml","precio":"38000.00","categoria":"pocion","imagen":"imagenes\/ma.png","marca":"pocion","es_destacado":"1","stock":"50"},
+{"id":"33","nombre":"GEL DEFINIDOR LA POCION TONGOLE X 500 ml","precio":"42000.00","categoria":"pocion","imagen":"imagenes\/gel.png","marca":"pocion","es_destacado":"0","stock":"50"}
+]
+}
+]
